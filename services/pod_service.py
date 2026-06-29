@@ -25,7 +25,7 @@ def parse_date(date_str):
 
 def get_pending_pod():
 
-df = get_master_df()
+    df = get_master_df()
 
     today = datetime.today().date()
 

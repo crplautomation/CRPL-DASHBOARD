@@ -16,7 +16,7 @@ VALID_PARTIES = [
 
 def get_pending_photos():
 
-df = get_master_df()
+    df = get_master_df()
 
     # Remove duplicate LRs
     if "LR NO".upper() in df.columns:

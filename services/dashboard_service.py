@@ -6,7 +6,7 @@ from services.photo_service import get_pending_photos
 
 def get_dashboard_summary():
 
-df = get_master_df()
+    df = get_master_df()
 
     today = datetime.today()
 

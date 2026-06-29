@@ -13,7 +13,7 @@ PREMIER = {
 
 def get_pending_billing():
 
-df = get_master_df()
+    df = get_master_df()
 
     today = datetime.today().date()
 
