@@ -1,8 +1,7 @@
 from collections import defaultdict
 from datetime import datetime, timedelta
 from services.excel_formatter import format_excel
-from services.google_sheet_service import get_master
-
+from services.data_cache import get_master_df
 EXCLUDE_PARTIES = {
     "PEPPL",
     "PEIPL",
@@ -26,9 +25,7 @@ def parse_date(date_str):
 
 def get_pending_pod():
 
-    ws = get_master()
-
-    rows = ws.get_all_records()
+df = get_master_df()
 
     today = datetime.today().date()
 
@@ -40,7 +37,7 @@ def get_pending_pod():
 
     total_count = 0
 
-    for row in rows:
+    for _, row in df.iterrows():
 
         party = str(row.get("PARTY NAME", "")).strip().upper()
 

@@ -1,13 +1,12 @@
 from datetime import datetime
+from services.data_cache import get_master_df
 from services.google_sheet_service import get_master
 from services.pod_service import get_pending_pod
 from services.photo_service import get_pending_photos
 
 def get_dashboard_summary():
 
-    ws = get_master()
-
-    rows = ws.get_all_records()
+df = get_master_df()
 
     today = datetime.today()
 
@@ -24,7 +23,7 @@ def get_dashboard_summary():
     current_month_trips = 0
     previous_month_trips = 0
 
-    for row in rows:
+    for _, row in df.iterrows():
 
         lr_date = str(row.get("LR DATE", "")).strip()
 
@@ -49,7 +48,7 @@ def get_dashboard_summary():
             previous_month_trips += 1
     pending_billing = 0
 
-    for row in rows:
+    for _, row in df.iterrows():
 
         bill_no = str(row.get("BILL NO", "")).strip()
 

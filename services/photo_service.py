@@ -1,9 +1,7 @@
 from collections import defaultdict
 import pandas as pd
 from openpyxl import Workbook
-from services.data_cache import get_master_rows
-
-from services.google_sheet_service import get_master
+from services.data_cache import get_master_df
 from services.excel_formatter import format_excel
 
 VALID_PARTIES = [
@@ -18,12 +16,7 @@ VALID_PARTIES = [
 
 def get_pending_photos():
 
-    rows = get_master_rows()
-
-    df = pd.DataFrame(rows)
-
-    # Same as your old script
-    df.columns = df.columns.str.strip().str.upper()
+df = get_master_df()
 
     # Remove duplicate LRs
     if "LR NO".upper() in df.columns:

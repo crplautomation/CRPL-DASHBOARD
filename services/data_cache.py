@@ -1,29 +1,24 @@
 import time
+import pandas as pd
 
 from services.google_sheet_service import get_master
 
-# Cache variables
-_cache = None
+_cache_df = None
 _cache_time = 0
 
-# Refresh every 60 seconds
 CACHE_SECONDS = 60
 
 
-def get_master_rows(force_refresh=False):
-    """
-    Returns Google Sheet data.
-    Downloads only once every CACHE_SECONDS.
-    """
+def get_master_df(force_refresh=False):
 
-    global _cache
+    global _cache_df
     global _cache_time
 
     now = time.time()
 
     if (
         force_refresh
-        or _cache is None
+        or _cache_df is None
         or (now - _cache_time) > CACHE_SECONDS
     ):
 
@@ -31,12 +26,21 @@ def get_master_rows(force_refresh=False):
 
         ws = get_master()
 
-        _cache = ws.get_all_records()
+        rows = ws.get_all_records()
+
+        df = pd.DataFrame(rows)
+
+        df.columns = df.columns.str.strip().str.upper()
+
+        for col in df.columns:
+            df[col] = df[col].astype(str)
+
+        _cache_df = df
 
         _cache_time = now
 
     else:
 
-        print("⚡ Using Cached Google Sheet")
+        print("⚡ Using Cached DataFrame")
 
-    return _cache
+    return _cache_df.copy()

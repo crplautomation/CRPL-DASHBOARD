@@ -1,9 +1,7 @@
 from collections import defaultdict
 from datetime import datetime
 from openpyxl import Workbook
-from services.google_sheet_service import get_master
-
-
+from services.data_cache import get_master_df
 PREMIER = {
     "PEPPL",
     "PEIPL",
@@ -15,9 +13,7 @@ PREMIER = {
 
 def get_pending_billing():
 
-    ws = get_master()
-
-    rows = ws.get_all_records()
+df = get_master_df()
 
     today = datetime.today().date()
 
@@ -31,7 +27,7 @@ def get_pending_billing():
 
     details = []
 
-    for row in rows:
+    for _, row in df.iterrows():
 
         bill_no = str(row.get("BILL NO", "")).strip()
 
