@@ -1,0 +1,45 @@
+<div class="card mt-4">
+
+    <div class="card-header bg-primary text-white">
+
+        <h4>Company Wise Summary</h4>
+
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-striped">
+
+            <thead>
+
+                <tr>
+
+                    <th>Company</th>
+
+                    <th>Total Trips</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for company in companies %}
+
+                <tr>
+
+                    <td>{{ company.name }}</td>
+
+                    <td>{{ company.trips }}</td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

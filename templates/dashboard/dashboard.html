@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+{% include "components/kpi_cards.html" %}
+
+{% include "components/company_summary.html" %}
+
+{% include "components/charts.html" %}
+
+{% include "components/footer.html" %}
+<h2>{{ data.master_rows }}</h2>
+
+{% include "components/billing_modal.html" %}
+<script src="{{ url_for('static', filename='js/billing.js') }}"></script>
+{% include "components/billing_modal.html" %}
+{% include "components/pod_modal.html" %}
+{% include "components/photo_modal.html" %}
+{% endblock %}

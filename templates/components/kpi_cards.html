@@ -1,0 +1,145 @@
+<h2 class="mb-4">Dashboard</h2>
+
+<div class="row">
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="card card-blue">
+
+<div class="card-body">
+
+<h6>📅 Current Month Trips</h6>
+
+<h2>{{ data.current_month_trips }}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="card card-green">
+
+<div class="card-body">
+
+<h6>📊 Previous Month Trips</h6>
+
+<h2>{{ data.previous_month_trips }}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="card card-orange">
+
+<div class="card-body">
+
+<h6>🚛 In Transit</h6>
+
+<h2>{{ data.in_transit }}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="card card-red"
+
+     style="cursor:pointer"
+
+     onclick="openPendingPOD()">
+
+    <div class="card-body">
+
+        <h6>📷 Pending POD</h6>
+
+        <h2>{{ data.pending_pod }}</h2>
+
+    </div>
+
+</div>
+</div>
+
+<div class="row">
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="card card-purple">
+
+<div class="card-body">
+
+<h6>💰 Payment Today</h6>
+
+<h2>{{ data.payment_today }}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div
+class="card card-dark"
+
+style="cursor:pointer"
+
+onclick="openPendingBilling()">
+
+<div class="card-body">
+
+<h6>📄 Pending Billing</h6>
+
+<h2>{{ data.pending_billing }}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="card card-info">
+
+<div class="card-body">
+
+<h6>📍 Pending Tracking</h6>
+
+<h2>{{ data.pending_tracking }}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="card card-warning"
+     style="cursor:pointer"
+     onclick="openPendingPhotos()">
+
+    <div class="card-body">
+
+        <h6>📸 Pending Photos</h6>
+
+        <h2>{{ data.pending_photos }}</h2>
+
+    </div>
+
+</div>
+</div>
+
+</div>

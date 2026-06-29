@@ -1,0 +1,305 @@
+<div class="row g-4">
+
+    <!-- Current Month Trips -->
+    <div class="col-xl-3 col-lg-4 col-md-6">
+
+        <div class="card shadow-sm border-0 h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between">
+
+                    <div>
+
+                        <div class="text-primary fw-bold mb-2">
+                            🗓️ Current Month Trips
+                        </div>
+
+                        <h1 class="fw-bold text-primary">
+                            {{ summary.current_month_trips }}
+                        </h1>
+
+                        <small class="text-muted">
+                            Trips for current month
+                        </small>
+
+                    </div>
+
+                    <div class="display-5">
+                        🚚
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Previous Month Trips -->
+    <div class="col-xl-3 col-lg-4 col-md-6">
+
+        <div class="card shadow-sm border-0 h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between">
+
+                    <div>
+
+                        <div class="text-success fw-bold mb-2">
+                            📚 Previous Month Trips
+                        </div>
+
+                        <h1 class="fw-bold text-success">
+                            {{ summary.previous_month_trips }}
+                        </h1>
+
+                        <small class="text-muted">
+                            Previous month trips
+                        </small>
+
+                    </div>
+
+                    <div class="display-5">
+                        📚
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Pending POD -->
+    <div class="col-xl-3 col-lg-4 col-md-6">
+
+        <div class="card shadow-sm border-0 h-100"
+             style="cursor:pointer"
+             onclick="openPendingPOD()">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between">
+
+                    <div>
+
+                        <div class="text-danger fw-bold mb-2">
+                            📷 Pending POD
+                        </div>
+
+                        <h1 class="fw-bold text-danger">
+                            {{ summary.pending_pod }}
+                        </h1>
+
+                        <small class="text-muted">
+                            PODs awaiting receipt
+                        </small>
+
+                    </div>
+
+                    <div class="display-5">
+                        📷
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Pending Billing -->
+    <div class="col-xl-3 col-lg-4 col-md-6">
+
+        <div class="card shadow-sm border-0 h-100"
+             style="cursor:pointer"
+             onclick="openPendingBilling()">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between">
+
+                    <div>
+
+                        <div class="text-dark fw-bold mb-2">
+                            📄 Pending Billing
+                        </div>
+
+                        <h1 class="fw-bold text-dark">
+                            {{ summary.pending_billing }}
+                        </h1>
+
+                        <small class="text-muted">
+                            Ready for billing
+                        </small>
+
+                    </div>
+
+                    <div class="display-5">
+                        📄
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Pending Photos -->
+    <div class="col-xl-3 col-lg-4 col-md-6">
+
+        <div class="card shadow-sm border-0 h-100"
+             style="cursor:pointer"
+             onclick="openPendingPhotos()">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between">
+
+                    <div>
+
+                        <div class="text-warning fw-bold mb-2">
+                            📸 Pending Photos
+                        </div>
+
+                        <h1 class="fw-bold text-warning">
+                            {{ summary.pending_photos }}
+                        </h1>
+
+                        <small class="text-muted">
+                            Photos pending
+                        </small>
+
+                    </div>
+
+                    <div class="display-5">
+                        📸
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Pending Tracking -->
+    <div class="col-xl-3 col-lg-4 col-md-6">
+
+        <div class="card shadow-sm border-0 h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between">
+
+                    <div>
+
+                        <div class="text-info fw-bold mb-2">
+                            📍 Pending Tracking
+                        </div>
+
+                        <h1 class="fw-bold text-info">
+                            {{ summary.pending_tracking }}
+                        </h1>
+
+                        <small class="text-muted">
+                            Awaiting tracking update
+                        </small>
+
+                    </div>
+
+                    <div class="display-5">
+                        📍
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- In Transit -->
+    <div class="col-xl-3 col-lg-4 col-md-6">
+
+        <div class="card shadow-sm border-0 h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between">
+
+                    <div>
+
+                        <div class="text-primary fw-bold mb-2">
+                            🚛 In Transit
+                        </div>
+
+                        <h1 class="fw-bold text-primary">
+                            {{ summary.in_transit }}
+                        </h1>
+
+                        <small class="text-muted">
+                            Vehicles on route
+                        </small>
+
+                    </div>
+
+                    <div class="display-5">
+                        🚛
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Payment Today -->
+    <div class="col-xl-3 col-lg-4 col-md-6">
+
+        <div class="card shadow-sm border-0 h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between">
+
+                    <div>
+
+                        <div class="text-success fw-bold mb-2">
+                            💰 Payment Today
+                        </div>
+
+                        <h1 class="fw-bold text-success">
+                            ₹{{ summary.payment_today }}
+                        </h1>
+
+                        <small class="text-muted">
+                            Today's receipts
+                        </small>
+
+                    </div>
+
+                    <div class="display-5">
+                        💰
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

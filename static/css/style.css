@@ -1,0 +1,250 @@
+
+body{
+
+
+    margin:0;
+
+    background:#f5f7fb;
+
+    font-family:Arial,sans-serif;
+
+}
+
+.sidebar{
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    width:240px;
+
+    height:100vh;
+
+    background:#0d3b66;
+
+    color:white;
+
+    padding-top:20px;
+
+}
+
+.logo{
+
+    text-align:center;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    margin-bottom:40px;
+
+}
+
+.sidebar a{
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 25px;
+
+    font-size:18px;
+
+}
+
+.sidebar a:hover{
+
+    background:#15538c;
+
+}
+
+.main{
+
+    margin-left:240px;
+
+    padding:25px;
+
+}
+
+.topbar{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+
+    margin-bottom:25px;
+
+}
+
+.live{
+
+    color:green;
+
+    font-weight:bold;
+
+    margin-right:20px;
+
+}
+
+.admin{
+
+    background:#0d3b66;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+}
+
+.card{
+
+    border:none;
+
+    border-radius:15px;
+
+    color:white;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.card-body{
+
+    text-align:center;
+
+    padding:25px;
+
+}
+
+.card h2{
+
+    font-size:40px;
+
+    font-weight:bold;
+
+}
+
+.card h6{
+
+    font-size:18px;
+
+    margin-bottom:15px;
+
+}
+
+.card-blue{
+
+    background:#007bff;
+
+}
+
+.card-green{
+
+    background:#28a745;
+
+}
+
+.card-orange{
+
+    background:#fd7e14;
+
+}
+
+.card-red{
+
+    background:#dc3545;
+
+}
+
+.card-purple{
+
+    background:#6f42c1;
+
+}
+
+.card-dark{
+
+    background:#343a40;
+
+}
+
+.card-info{
+
+    background:#17a2b8;
+
+}
+
+.card-warning{
+
+    background:#ffc107;
+
+    color:black;
+
+}
+
+.sidebar{
+    width:260px;
+    position:fixed;
+    top:0;
+    left:0;
+    overflow-y:auto;
+}
+
+.sidebar .nav-link{
+    border-radius:8px;
+    margin:2px 10px;
+    transition:.25s;
+}
+
+.sidebar .nav-link:hover{
+    background:#0d6efd;
+    color:#fff!important;
+}
+
+.sidebar .active{
+    background:#198754;
+    color:#fff!important;
+}
+/* =========================
+   Loading Spinner
+========================= */
+
+.spinner-overlay{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.35);
+
+    z-index:99999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    backdrop-filter:blur(2px);
+
+}
