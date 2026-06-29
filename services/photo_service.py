@@ -1,6 +1,7 @@
 from collections import defaultdict
 import pandas as pd
 from openpyxl import Workbook
+from services.data_cache import get_master_rows
 
 from services.google_sheet_service import get_master
 from services.excel_formatter import format_excel
@@ -17,15 +18,9 @@ VALID_PARTIES = [
 
 def get_pending_photos():
 
-    ws = get_master()
+    rows = get_master_rows()
 
-    # Read sheet exactly like your old script
-    values = ws.get_all_values()
-
-    headers = values[0]
-    data = values[1:]
-
-    df = pd.DataFrame(data, columns=headers)
+    df = pd.DataFrame(rows)
 
     # Same as your old script
     df.columns = df.columns.str.strip().str.upper()
