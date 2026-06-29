@@ -63,9 +63,8 @@ def get_dashboard_summary():
             except:
                 pass
     # ADD THESE TWO LINES
-    pod = get_pending_pod()
-    photos = get_pending_photos()
-
+    pod = {"count": 0}
+    photos = {"count": 0}
     return {
 
         "current_month_trips": current_month_trips,
