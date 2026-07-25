@@ -97,7 +97,9 @@ def get_pending_billing():
         })
 
     summary_rows = []
-
+    for party, data in summary.items():
+        if data["trips"] <= 0:
+            continue
     
         summary_rows.append({
 
