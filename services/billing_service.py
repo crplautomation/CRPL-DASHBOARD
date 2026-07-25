@@ -45,10 +45,13 @@ def get_pending_billing():
         else:
             group = party
 
-        booking = row.get("BOOKING", 0)
+        booking_raw = str(row.get("BOOKING", "")).strip()
+        if booking_raw == "":
+             booking = 0
+        else:
 
         try:
-            booking = float(str(booking).replace(",", ""))
+            booking = float(booking_raw.replace(",", ""))
         except:
             booking = 0
 
